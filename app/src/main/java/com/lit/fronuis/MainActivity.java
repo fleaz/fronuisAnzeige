@@ -1,36 +1,54 @@
 package com.lit.fronuis;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import org.mozilla.geckoview.GeckoRuntime;
-import org.mozilla.geckoview.GeckoSession;
-import org.mozilla.geckoview.GeckoView;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.WindowManager;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity
 {
+    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        hideSystemUI();
-        GeckoView view = findViewById(R.id.geckoview);
-        GeckoSession session = new GeckoSession();
-        GeckoRuntime runtime = GeckoRuntime.create(this);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        webView = new WebView(MainActivity.this);
+        setContentView(webView);
+        //setContentView(R.layout.activity_main);
+        //hideSystemUI();
+        //webv = findViewById(R.id.webv);
+        WebViewClient client = new WebViewClient();
+        webView.setWebViewClient(client);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.loadUrl("http://192.168.178.58/#/dashboard");
 
-        session.open(runtime);
-        view.setSession(session);
-        session.loadUri("http://192.168.178.58/#/dashboard");
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                webView.evaluateJavascript("document.getElementsByTagName('site-header')[0].remove();", null);
+            }
+        }, 10000);
+
     }
 
     @Override
     protected void onResume()
     {
         super.onResume();
-        hideSystemUI();
+        //setContentView(webView);
+        //hideSystemUI();
     }
 
     private void hideSystemUI()
