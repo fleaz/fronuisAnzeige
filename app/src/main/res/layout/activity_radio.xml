@@ -14,35 +14,40 @@
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="WDR 2" />
+            android:text="WDR 2"
+            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="1Live" />
+            android:text="1Live"
+            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="WDR 5" />
+            android:text="WDR 5"
+            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="DLF Nova" />
+            android:text="DLF Nova"
+            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
         <Button
             android:id="@+id/button5"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Antenne Münster" />
+            android:text="Antenne Münster"
+            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
 
     </LinearLayout>
 

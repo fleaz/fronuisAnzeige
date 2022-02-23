@@ -17,6 +17,7 @@ import android.widget.Button;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * WDR 2: https://wdr-wdr2-muensterland.icecastssl.wdr.de/wdr/wdr2/muensterland/mp3/128/stream.mp3
@@ -33,6 +34,7 @@ import java.io.IOException;
 
 public class Radio extends AppCompatActivity {
     private Button btn, btn2, btn3, btn4, btn5;
+    ArrayList<Button> btnList;
 
     private boolean playPause;
     private MediaPlayer mediaPlayer;
@@ -50,36 +52,30 @@ public class Radio extends AppCompatActivity {
         btn3 = findViewById(R.id.button3);
         btn4 = findViewById(R.id.button4);
         btn5 = findViewById(R.id.button5);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                click(1);
-            }
-        });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                click(2);
-            }
-        });
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                click(3);
-            }
-        });
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                click(4);
-            }
-        });
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                click(5);
-            }
-        });
+        btnList = new ArrayList<>();
+        btnList.add(btn);
+        btnList.add(btn2);
+        btnList.add(btn3);
+        btnList.add(btn4);
+        btnList.add(btn5);
+        for (Button btn: btnList) {
+            btn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
+        }
+        for(int i = 0; i < btnList.size();i++)
+        {
+            int finalI = i;
+            btnList.get(i).setOnClickListener(v -> {
+                if(cur == finalI +1)
+                    btnList.get(finalI).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
+                else
+                {
+                    btnList.get(finalI).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_pause_24,0,0,0);
+                    if(cur != 0)
+                        btnList.get(cur-1).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
+                }
+                click(finalI +1);
+            });
+        }
         FloatingActionButton fab = findViewById(R.id.fabR);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

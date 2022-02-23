@@ -52,23 +52,23 @@ public class MainActivity extends AppCompatActivity
         String newUA= "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
         //webView.getSettings().setUserAgentString(newUA);
         webView.loadUrl("http://192.168.178.58/#/dashboard");
-
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                webView.evaluateJavascript("document.getElementsByTagName('site-header')[0].remove();", null);
+                webView.evaluateJavascript("document.getElementsByTagName('site-header')[0].remove()", null);
                 webView.evaluateJavascript("document.getElementsByTagName('main-menu')[0].remove()", null);
                 webView.evaluateJavascript("document.getElementsByTagName('mat-tab-header')[0].remove()", null);
-                webView.evaluateJavascript("document.getElementsByClassName('ng-tns-c331-9 card-inner cardwrapper-col-sm-5 cardwrapper-col-md-6 cardwrapper-col-md-offset-0 ng-trigger ng-trigger-triggerFade ng-star-inserted')[0].remove()", null);
-                webView.evaluateJavascript("document.getElementsByClassName('ng-tns-c331-9 card-inner cardwrapper-col-sm-12 cardwrapper-col-md-6 cardwrapper-col-md-offset-0 ng-trigger ng-trigger-triggerFade ng-star-inserted')[0].remove()", null);
-                webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.marginLeft = 0", null);
-                webView.evaluateJavascript("document.getElementsByClassName('beneath-header ng-tns-c48-0')[0].style.top = 0", null);
-                webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.paddingLeft = 0", null);
-                webView.evaluateJavascript("document.getElementsByClassName('mat-card-title ng-tns-c331-9 ng-star-inserted')[0].remove()", null);
+                webView.evaluateJavascript("document.getElementsByClassName('ng-tns-c329-9 card-inner cardwrapper-col-sm-5 cardwrapper-col-md-6 cardwrapper-col-md-offset-0 ng-trigger ng-trigger-triggerFade ng-star-inserted')[0].remove()", null);
+                webView.evaluateJavascript("document.getElementsByClassName('ng-tns-c329-9 card-inner cardwrapper-col-sm-12 cardwrapper-col-md-6 cardwrapper-col-md-offset-0 ng-trigger ng-trigger-triggerFade ng-star-inserted')[0].remove()", null);
+                //webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.marginLeft = 0", null);
+                //webView.evaluateJavascript("document.getElementsByClassName('beneath-header ng-tns-c48-0')[0].style.top = 0", null);
+                //webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.paddingLeft = 0", null);
+                webView.evaluateJavascript("document.getElementsByClassName('mat-card-title ng-tns-c329-9 ng-star-inserted')[0].remove()", null);
+                webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.margin = 0", null);
                 webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.backgroundColor = \"#000000\"", null);
                 webView.evaluateJavascript("document.getElementsByClassName('mat-card mat-focus-indicator ng-tns-c331-9')[0].style.backgroundColor = \"#000000\"", null);
-                webView.scrollBy(0, 120);
+                webView.scrollBy(0, 187);
             }
         }, 20000);
 
