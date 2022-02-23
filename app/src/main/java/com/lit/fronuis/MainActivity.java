@@ -3,6 +3,7 @@ package com.lit.fronuis;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,10 +13,13 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity
 {
     WebView webView;
     WebView webWeather;
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,6 +29,14 @@ public class MainActivity extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //webView = new WebView(MainActivity.this);
         setContentView(R.layout.activity_main);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Radio.class);
+                startActivity(intent);
+            }
+        });
         webView = findViewById(R.id.web);
         webWeather = findViewById(R.id.webv);
         webWeather.getSettings().setJavaScriptEnabled(true);
