@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity
     protected void onResume()
     {
         super.onResume();
+        webWeather.reload();
         //setContentView(webView);
         //hideSystemUI();
     }
