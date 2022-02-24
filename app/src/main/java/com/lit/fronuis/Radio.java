@@ -124,13 +124,20 @@ public class Radio extends AppCompatActivity {
             }
             else {
                 if (!mediaPlayer.isPlaying())
+                {
+                    btnList.get(num - 1).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_pause_24, 0, 0, 0);
                     mediaPlayer.start();
+                }
+
             }
             playPause = true;
         } else {
             //btn.setBackgroundResource(R.drawable.button_play);
             if (mediaPlayer.isPlaying())
+            {
+                btnList.get(cur-1).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
                 mediaPlayer.pause();
+            }
             playPause = false;
         }
         cur = num;
