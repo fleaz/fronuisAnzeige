@@ -135,7 +135,7 @@ public class Radio extends AppCompatActivity {
             //btn.setBackgroundResource(R.drawable.button_play);
             if (mediaPlayer.isPlaying())
             {
-                btnList.get(cur-1).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
+                btnList.get(num-1).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
                 mediaPlayer.pause();
             }
             playPause = false;
