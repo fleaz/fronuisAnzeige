@@ -9,47 +9,66 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="6dp">
 
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="WDR 2"
-            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="WDR 2"
+                android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1Live"
-            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="WDR 5"
-            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="DLF Nova"
-            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Antenne Münster"
-            android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1Live"
+                android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="WDR 5"
+                android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DLF Nova"
+                android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Antenne Münster"
+                android:drawableLeft="@drawable/ic_round_play_arrow_24"/>
+
+        </LinearLayout>
+
+        <it.beppi.knoblibrary.Knob
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/knob"
+            app:kNumberOfStates="60"
+            app:kBorderWidth="6dp"
+            app:kCircularIndicatorColor="@color/purple_500"
+            />
 
     </LinearLayout>
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabR"
@@ -60,6 +79,6 @@
         android:layout_alignParentEnd="true"
         android:src="@drawable/ic_round_swap_horiz_24"
         android:layout_margin="16dp"
-        android:background="@color/white"/>
+        app:backgroundTint="#FFC107"/>
 
 </RelativeLayout>

@@ -60,6 +60,7 @@ public class Radio extends AppCompatActivity {
         btnList.add(btn5);
         for (Button btn: btnList) {
             btn.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
+            btn.setBackgroundColor(getResources().getColor(R.color.purple_500));
         }
         for(int i = 0; i < btnList.size();i++)
         {
@@ -70,19 +71,21 @@ public class Radio extends AppCompatActivity {
                 else
                 {
                     btnList.get(finalI).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_pause_24,0,0,0);
+                    btnList.get(finalI).setBackgroundColor(getResources().getColor(R.color.purple_700));
                     if(cur != 0)
+                    {
                         btnList.get(cur-1).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_play_arrow_24,0,0,0);
+                        btnList.get(cur-1).setBackgroundColor(getResources().getColor(R.color.purple_500));
+                    }
                 }
                 click(finalI +1);
             });
         }
         FloatingActionButton fab = findViewById(R.id.fabR);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Radio.this, MainActivity.class);
-                startActivity(intent);
-            }
+        fab.setOnClickListener(view ->
+        {
+            Intent intent = new Intent(Radio.this, MainActivity.class);
+            startActivity(intent);
         });
 
         mediaPlayer = new MediaPlayer();
@@ -126,6 +129,7 @@ public class Radio extends AppCompatActivity {
                 if (!mediaPlayer.isPlaying())
                 {
                     btnList.get(num - 1).setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_round_pause_24, 0, 0, 0);
+                    btnList.get(num - 1).setBackgroundColor(getResources().getColor(R.color.purple_700));
                     mediaPlayer.start();
                 }
 
