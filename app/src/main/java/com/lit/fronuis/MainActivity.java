@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity
                 webView.evaluateJavascript("document.getElementsByTagName('site-header')[0].remove()", null);
                 webView.evaluateJavascript("document.getElementsByTagName('main-menu')[0].remove()", null);
                 webView.evaluateJavascript("document.getElementsByTagName('mat-tab-header')[0].remove()", null);
+                webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.backgroundColor = \"#4a4a4\"", null);
+                webView.evaluateJavascript("document.getElementsByClassName('mat-card mat-focus-indicator ng-tns-c329-9')[0].style.backgroundColor = \"#242424\"", null);
                 webView.evaluateJavascript("document.getElementsByClassName('ng-tns-c329-9 card-inner cardwrapper-col-sm-5 cardwrapper-col-md-6 cardwrapper-col-md-offset-0 ng-trigger ng-trigger-triggerFade ng-star-inserted')[0].remove()", null);
                 webView.evaluateJavascript("document.getElementsByClassName('ng-tns-c329-9 card-inner cardwrapper-col-sm-12 cardwrapper-col-md-6 cardwrapper-col-md-offset-0 ng-trigger ng-trigger-triggerFade ng-star-inserted')[0].remove()", null);
                 //webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.marginLeft = 0", null);
@@ -66,9 +68,9 @@ public class MainActivity extends AppCompatActivity
                 //webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.paddingLeft = 0", null);
                 webView.evaluateJavascript("document.getElementsByClassName('mat-card-title ng-tns-c329-9 ng-star-inserted')[0].remove()", null);
                 webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.margin = 0", null);
-                webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.backgroundColor = \"#000000\"", null);
-                webView.evaluateJavascript("document.getElementsByClassName('mat-card mat-focus-indicator ng-tns-c331-9')[0].style.backgroundColor = \"#000000\"", null);
-                webView.scrollBy(0, 187);
+                //webView.evaluateJavascript("document.getElementsByClassName('container-fluid app-content ng-tns-c48-0')[0].style.backgroundColor = \"#000000\"", null);
+                //webView.evaluateJavascript("document.getElementsByClassName('mat-card mat-focus-indicator ng-tns-c331-9')[0].style.backgroundColor = \"#000000\"", null);
+                webView.scrollBy(0, 205);
             }
         }, 20000);
 
